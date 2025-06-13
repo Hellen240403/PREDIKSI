@@ -3,7 +3,7 @@ import streamlit as st
 def app():
     st.title("SkyWard Team")
 
-    st.header("Inilah Kami")
+    st.header("About We")
     st.markdown("""
                 Segenap mahasiswa Departemen Statistika Bisnis Angkatan 2022 yang sedang mengambil
                 mata kuliah Machine Learning. Sebuah mata kuliah yang memperdalam ilmu kami dalam dunia 
@@ -49,8 +49,8 @@ def app():
 
         with col2:
             st.subheader("Hellen Aldenia Rovi")
-            st.markdown("**Tempat, Tanggal Lahir:** Malang, 22 Agustus 2004")
-            st.markdown("**NIM:** 12221032")
+            st.markdown("**Tempat, Tanggal Lahir:** Surabaya, 24 Agustus 2003")
+            st.markdown("**NIM:** 2043221045")
             
             st.markdown("---") # Garis pemisah
             
@@ -62,7 +62,7 @@ def app():
             st.markdown("---") # Garis pemisah
             
             st.markdown("#### Kontak")
-            st.markdown("📧 hellen.aldenia.skyward@gmail.com")
+            st.markdown("📧 hellenaldenia@gmail.com")
 
     # --- KONTEN TAB 3: ENDITA PRASTYANSYACH ---
     with tab3:
@@ -74,7 +74,7 @@ def app():
         with col2:
             st.subheader("Endita Prastyansyach")
             st.markdown("**Tempat, Tanggal Lahir:** Sidoarjo, 10 Januari 2004")
-            st.markdown("**NIM:** 12221048")
+            st.markdown("**NIM:** 2043221145")
             
             st.markdown("---") # Garis pemisah
             
@@ -86,7 +86,7 @@ def app():
             st.markdown("---") # Garis pemisah
             
             st.markdown("#### Kontak")
-            st.markdown("📧 endita.pras.skyward@gmail.com")
+            st.markdown("📧 enditapras@gmail.com")
 
     st.subheader("Data Variabel")
     st.markdown("""
@@ -98,7 +98,3 @@ def app():
     """)
 
     
-
-
-
-
