@@ -13,10 +13,11 @@ def app():
     st.title("Platform Prediksi Cuaca Kota Surabaya :thunder_cloud_and_rain:")
 
     with st.expander("Pendahuluan"):
+
         tab1, tab2, tab3 = st.tabs(["Latar Belakang", "Tujuan", "Manfaat"])
-        with tab1:
-            st.info("""
-	    Prediksi cuaca adalah proses untuk memprediksi kondisi atmosfer 
+
+    with tab1:
+        st.info("""Prediksi cuaca adalah proses untuk memprediksi kondisi atmosfer 
             pada waktu tertentu di masa depan yang dilakukan dengan menganalisis data 
             meteorologi yang ada. Perkembangannya teknologi dan metode yang terus meningkat 
             membuat banyak pilihan untuk memprediksi cuaca dengan sangat canggih. Proses 
@@ -40,26 +41,27 @@ def app():
             ramalan cuaca di daerah tersebut. Mengingat tantangan geografis dan dinamika cuaca 
             tropis yang unik, model prediksi cuaca yang lebih tepat dan efisien sangat diperlukan 
             untuk menghadapi ketidakpastian yang terjadi di masa depan.
-	    """)
+            """)
+
         with tab2:
-            st.info("""
-	    Tujuan dari penelitian ini adalah untuk mengembangkan model prediksi cuaca 
+            st.info("""Tujuan dari penelitian ini adalah untuk mengembangkan model prediksi cuaca 
             yang akurat untuk Kota Surabaya dengan menggunakan metode Artificial Neural Network 
             (ANN) dan Long Short-Term Memory (LSTM) berdasarkan data cuaca terbaru. Adapaun tujuan 
             penelitian secara spesifik dijabarkan sebagai berikut. 
-	        1. Membangun model prediksi cuaca yang dapat memproyeksikan kondisi atmosfer Kota Surabaya 
+            1. Membangun model prediksi cuaca yang dapat memproyeksikan kondisi atmosfer Kota Surabaya 
             dengan menggunakan data meteorologi yang diambil dari BMKG (Badan Meteorologi, Klimatologi, 
             dan Geofisika) pada periode 2023-2025.
-	        2. Mengoptimalkan performa prediksi cuaca dengan memanfaatkan metode ANN dan LSTM untuk 
+            2. Mengoptimalkan performa prediksi cuaca dengan memanfaatkan metode ANN dan LSTM untuk 
             mengidentifikasi pola cuaca yang lebih kompleks, terutama yang berhubungan dengan 
             ketergantungan jangka panjang dalam data cuaca.
-	        3. Menilai akurasi model prediksi yang dibangun dengan membandingkan hasil prediksi dari 
+            3. Menilai akurasi model prediksi yang dibangun dengan membandingkan hasil prediksi dari 
             ANN dan LSTM untuk memastikan metode yang paling sesuai digunakan untuk prediksi cuaca Kota 
             Surabaya.
             4. Memberikan kontribusi dalam pengembangan model prediksi cuaca berbasis teknologi 
             kecerdasan buatan di Indonesia, khususnya untuk meningkatkan kualitas peramalan cuaca di 
             wilayah perkotaan yang dinamis.
-	    """)
+            """)
+
         with tab3:
             st.info("""
             Penelitian ini memberikan berbagai manfaat yang dapat diterapkan dalam bidang meteorologi 
@@ -85,6 +87,7 @@ def app():
             yang memiliki tantangan cuaca dan iklim yang spesifik, memberikan wawasan lebih dalam tentang b
             agaimana cuaca berkembang di kawasan tersebut.
             """)
+
     with st.expander("Metode"):
         st.write("""
             Neural Network (NN) adalah model komputasi yang terinspirasi oleh cara kerja otak 
@@ -110,9 +113,7 @@ def app():
 
     # Load Dataset
     df = load_data("data/df_hujan.csv")
-	st.write(df.head())  
-	st.write(df.columns)
-    df['Tanggal'] = pd.to_datetime(df['Tanggal'])
+    df['tanggal'] = pd.to_datetime(df['tanggal'], format='%Y-%m-%d')
     df.set_index('tanggal', inplace=True)
 
     #Menampilkan data hujan
