@@ -8,9 +8,11 @@ from keras.models import load_model as keras_model
 from sklearn.preprocessing import MinMaxScaler
 
 # Function to load data
-def load_data(file_path, index_col=None):
-    df = pd.read_csv(file_path, index_col=index_col)
-    return df
+df = load_data(filepath)
+st.write("Kolom CSV:", df.columns.tolist())  # Debugging
+df.columns = df.columns.str.strip().str.lower()
+df['tanggal'] = pd.to_datetime(df['tanggal'], format='%Y-%m-%d')
+df.set_index('tanggal', inplace=True)
 
 # Function to load machine learning model
 def load_model(file_path):
@@ -76,7 +78,7 @@ def plot_forecast(df, forecast_df):
 def app():
     st.title('Haii....')
     st.title('Anda sedang Berada di Bagian PRediksi Cuaca')
-    st.writer("""Prediksi cuaca Kota Surabaya dapat diketahui berdasarkan permintaan Anda. Prediksi 
+    st.write("""Prediksi cuaca Kota Surabaya dapat diketahui berdasarkan permintaan Anda. Prediksi 
                 Menggunakan Algoritama Long Short Term Memory yang merupakan bagian dari Neural Network. 
                 Kami sertakan data histori cuaca Kota Surabaya dari tahun 2023 sebagai berikut.""")
 
